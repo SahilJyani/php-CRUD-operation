@@ -29,7 +29,22 @@ $row=mysqli_fetch_assoc($result);
             font-weight:300;
         }
         .headicon{
-            font-size:27px;
+            font-size:30px;
+        }
+        .dbicon{
+            font-size:35px;
+        }
+        .inputcolor{
+            background-color:#F1F6E7;
+        }
+        .textcolor{
+         color:#2F4F2F;
+        }
+        .btnbgcolor{
+         background-color:#2F4F2F;
+        }
+        .btnbgcolor:hover{
+         background-color:#2F4F2F;
         }
    </style>
 </head>
@@ -37,7 +52,7 @@ $row=mysqli_fetch_assoc($result);
     <header id="headd">
         <nav class="navbar navbar-expand-md fixed-top bg-white shadow p-0">
             <div class="container-fluid m-0 p-2 ">
-                <a class="text-dark text-decoration-none text_gap"><i class="fa-solid fa-pen-to-square headicon px-3"></i>EDIT INVENTORY LIST</a>
+                <a class="text-dark text-decoration-none text_gap"><i class="fa-solid fa-shop px-3 headicon"></i>INVENTORY</a>
                 <button class="navbar-toggler " type="button" data-bs-toggle="collapse" data-bs-target="#collapsiblenav">
                     <span class="navbar-toggler-icon  "></span>
                 </button>
@@ -53,51 +68,52 @@ $row=mysqli_fetch_assoc($result);
             </div>
         </nav>
     </header>
-    <section class="section9 container-fulid pt-5 mt-5 bg-success" id="contact">
-     <form class=" pb-5  " action="edititemredirect.php" method="POST" autocomplete="on" >
+    <section class="section9 container-fulid pt-5 mt-5" id="contact">
+        <div class="text-center"><p class="display-6"><i class="fa-solid fa-database dbicon text-success mx-3"></i> INVENTORY MANAGMENT</p></div>
+     <form class=" pb-5 textcolor " action="edititemredirect.php" method="POST" autocomplete="on" >
 
-        <input type="hidden" class="form-control" id="itemid" placeholder="Enter id" name="item_id" value="<?php echo $it_id;?>">
+        <input type="hidden" class="form-control" id="itemid" placeholder="Enter id" name="item_id" value="<?php echo $it_id;?>" />
                 
-         <div class=" mb-3 mt-3 mx-4 ">
-                <label for="itemid">ITEM ID</label>
-                <input type="text" class="form-control" id="itemid" placeholder="Enter id" name="item_id" value="<?php echo $row ['item_id'];?>">
-                
-            </div>
-             <div class=" mb-3 mt-3 mx-4 ">
-                <label for="itemname"> ITEM Name</label>
-                <input type="text" class="form-control" id="itemname" placeholder="Enter name" name="item_name" value="<?php echo $row ['item_name'];?>">
+         <div class=" mb-3 mt-3 mx-auto w-75 ">
+                <label for="itemid"><i class="fa-solid fa-id-card pe-2"></i>ITEM ID</label>
+                <input type="text" class="form-control mt-2 inputcolor" id="itemid" placeholder="Enter id" name="item_id" value="<?php echo $row ['item_id'];?>">
                 
             </div>
-            <div class=" mb-3 mt-3 mx-4 ">
-                 <label for="price">PRICE</label>
-                <input type="number" class="form-control" id="price" placeholder="Price" name="item_price" value="<?php echo $row ['price'];?>">
+             <div class=" mb-3 mt-4 mx-auto w-75 ">
+                <label for="itemname"><i class="fa-solid fa-signature pe-2"></i>ITEM Name</label>
+                <input type="text" class="form-control mt-2 inputcolor" id="itemname" placeholder="Enter name" name="item_name" value="<?php echo $row ['item_name'];?>">
+                
+            </div>
+            <div class=" mb-3 mt-4 mx-auto w-75 ">
+                 <label for="price"><i class="fa-solid fa-hand-holding-dollar pe-2"></i>PRICE</label>
+                <input type="number" class="form-control mt-2 inputcolor" id="price" placeholder="Price" name="item_price" value="<?php echo $row ['price'];?>">
                
             </div>
-             <div class=" mb-3 mt-3 mx-4 ">
-                <label for="pdate">PURCHAGE DATE</label>
-                <input type="date" class="form-control" id="pdate" placeholder="YYYY-MM-DD" name="purchase_date" value="<?php echo $row ['purchase_date'];?>">
+             <div class=" mb-3 mt-4 mx-auto w-75 ">
+                <label for="pdate"><i class="fa-solid fa-calendar-days pe-2"></i>PURCHAGE DATE</label>
+                <input type="date" class="form-control  mt-2 inputcolor" id="pdate" placeholder="YYYY-MM-DD" name="purchase_date" value="<?php echo $row ['purchase_date'];?>">
                 
             </div>
-             <div class=" mb-3 mt-3 mx-4 ">
-                  <label for="qun">QUANTITY</label>
-                <input type="number" class="form-control" id="qun" placeholder="Quantity" name="quantity" value="<?php echo $row ['quantity'];?>">
+             <div class=" mb-3 mt-4 mx-auto w-75 ">
+                  <label for="qun"><i class="fa-solid fa-boxes-stacked pe-2"></i>QUANTITY</label>
+                <input type="number" class="form-control  mt-2 inputcolor" id="qun" placeholder="Quantity" name="quantity" value="<?php echo $row ['quantity'];?>">
               
             </div>
-             <div class=" mb-3 mt-3 mx-4 ">
-                  <label for="status">STATUS</label>
-                <input type="text" class="form-control" id="status" placeholder="In stock / out of stock" name="status" value="<?php echo $row ['status'];?>">
+             <div class="mb-3 mt-4 mx-auto w-75 ">
+                  <label for="status"><i class="fa-solid fa-warehouse pe-2"></i>STATUS</label>
+                <input type="text" class="form-control  mt-2 inputcolor" id="status" placeholder="In stock / out of stock" name="status" value="<?php echo $row ['status'];?>">
               
             </div>
-             <div class=" mb-3 mt-3 mx-4 ">
-                  <label for="sid">SUPPLIER ID</label>
-                <input type="text" class="form-control" id="sid" placeholder="Enter supplier id" name="s_id" value="<?php echo $row ['supplier'];?>">
+             <div class="mb-3 mt-4 mx-auto w-75  ">
+                  <label for="sid"><i class="fa-solid fa-truck-ramp-box pe-2"></i>SUPPLIER ID</label>
+                <input type="text" class="form-control mt-2 inputcolor" id="sid" placeholder="Enter supplier id" name="s_id" value="<?php echo $row ['supplier'];?>">
               
             </div>
-            <div>
-                <button class="btn text-white bg-dark rounded-0 mx-4 sec9btn" type="submit"><i class="fa-regular fa-paper-plane px-2"></i>SUBMIT</button>
+            <div class="text-center mt-4">
+                <button class="btn text-white btnbgcolor rounded-3 mx-4 sec9btn" type="submit"><i class="fa-solid fa-bookmark px-2"></i>SUBMIT</button>
             </div>
         </form>
     </section>
-        
+    
 </body>
 </html>

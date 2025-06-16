@@ -23,11 +23,9 @@ $result=mysqli_query($conn1,$sql_select);
             padding: 0;
             font-weight:200;
         }
-        *{
-            padding:0px;
-            margin:0px;
-
-        }
+       .marginbottom{
+        margin-bottom:9vh;
+       }
         .textcenter{
             text-align:center;
             margin-top:15px;
@@ -47,6 +45,7 @@ $result=mysqli_query($conn1,$sql_select);
        #headd{
         height:150px;
         background-color:#C4F1CE;
+        
        }
        .bglight{
         background-color:#f2f5f3;
@@ -62,9 +61,27 @@ $result=mysqli_query($conn1,$sql_select);
     </style>
 </head>
 <body>
-        <header id="headd" class="rounded-top-5 container-sm mb-0">
-        
+     <header class="marginbottom" >
+         <nav class="navbar navbar-expand-md fixed-top bg-white shadow p-0">
+            <div class="container-fluid m-0 p-2 ">
+                <a class="text-dark text-decoration-none text_gap"><i class="fa-solid fa-shop px-3 headicon"></i>INVENTORY</a>
+                <button class="navbar-toggler " type="button" data-bs-toggle="collapse" data-bs-target="#collapsiblenav">
+                    <span class="navbar-toggler-icon  "></span>
+                </button>
+                <div class="collapse navbar-collapse p-0 m-0" id="collapsiblenav">
+                    <ul class="navbar-nav ms-auto me-5 ">
+                            <li class="list-unstyled nav-item px-4 py-2"><a class="text-decoration-none text-muted " href="homepage.php"> HOME </a></li>
+                            <li class="list-unstyled nav-item px-3 py-2"><a class="text-decoration-none text-muted" href="showitem.php">
+                                <i class="fa-solid fa-user px-2"></i> SHOW</a></li>
+                            
+                        
+                    </ul>
+                </div>
+            </div>
+        </nav>
     </header>
+    <section id="headd" class="rounded-top-5 container-sm mb-0 " >
+    </section>
     <section class=" container-sm bglight mt-0 pb-5">
     <h1 class="ms-5 pt-5 "><i class="fa-solid fa-database dbicon rounded-circle "></i> Inventory </h1>
     <div class="table-responsive-md">
