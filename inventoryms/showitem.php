@@ -1,5 +1,5 @@
 <?php
-include("dbconnection.php");
+include("idbconnection.php");
 $sql_select="SELECT * FROM inventory ";
 $result=mysqli_query($conn1,$sql_select);
 
